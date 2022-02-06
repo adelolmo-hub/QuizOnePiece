@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="79dp"
+                android:fontFamily="@font/one_piece"
+                android:text="Quieres repetir?"
+                android:textColor="@color/orange"
+                android:textSize="64sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btCheck" />
+
+            <TextView
+                android:id="@+id/tvResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/one_piece"
+                android:textColor="@color/red"
+                android:textSize="84sp"
+                app:layout_constraintBottom_toTopOf="@+id/audioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <Button
+                android:id="@+id/audioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="playSound"
+                android:text="Play"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <Button
+                android:id="@+id/btCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:onClick="comprobarRespuesta"
+                android:text="Check"
+                app:layout_constraintStart_toStartOf="@+id/audioButton"
+                app:layout_constraintTop_toBottomOf="@+id/audioButton" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageLeft"
+                    android:layout_width="125dp"
+                    android:layout_height="150dp"
+                    android:onClick="imagenSeleccionada"
+                    tools:srcCompat="@drawable/luffy" />
+
+                <ImageView
+                    android:id="@+id/imageCenter"
+                    android:layout_width="125dp"
+                    android:layout_height="150dp"
+                    android:onClick="imagenSeleccionada"
+                    tools:srcCompat="@drawable/zoro" />
+
+                <ImageView
+                    android:id="@+id/imageRight"
+                    android:layout_width="125dp"
+                    android:layout_height="150dp"
+                    android:onClick="imagenSeleccionada"
+                    tools:srcCompat="@drawable/sanji" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
